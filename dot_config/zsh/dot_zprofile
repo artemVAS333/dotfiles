@@ -1,0 +1,6 @@
+if [[ -f "${ZDOTDIR:-$HOME/.config/zsh}/lib/helpers.zsh" ]]; then
+    source "$ZDOTDIR/lib/helpers.zsh"
+fi
+
+# Load environment configuration from user local binary folder
+try_eval brew shellenv

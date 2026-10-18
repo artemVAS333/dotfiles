@@ -1,0 +1,23 @@
+[mgr]
+show_hidden = true
+
+[opener]
+system_open = [
+    { run = 'open %s', orphan = true, desc = "Open" }
+]
+
+editor = [
+    { run = "$EDITOR %s", block = true, for = "unix", desc = "Edit" },
+]
+
+[open]
+rules = [
+    { url = "*/", use = [ "system_open", "editor" ] },
+
+    { mime = "image/*", use = "system_open" },
+    { mime = "video/*", use = "system_open" },
+    { mime = "audio/*", use = "system_open" },
+    { mime = "application/pdf", use = "system_open" },
+
+    { url = "*", use = [ "system_open", "editor" ] },
+]

@@ -1,0 +1,6 @@
+[mgr]
+prepend_keymap = [
+    { on = "O", run = "open", desc = "Open with..." },
+    { on = "o", run = "open --interactive", desc = "Open" },
+    { on = "e", run = 'shell "$EDITOR \"$@\"" --block'},
+]

@@ -1,0 +1,5 @@
+editor: nvim
+theme: catppuccin-mocha
+keymap:
+  open-in-editor: ctrl+e
+#   send-request: ctrl+r

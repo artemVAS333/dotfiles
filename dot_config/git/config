@@ -1,0 +1,10 @@
+[pull]
+	ff = only
+	rebase = true
+[rebase]
+	autoStash = true
+[user]
+	email = artem.vas333@gmail.com
+	name = artemka
+[credential]
+	helper = osxkeychain

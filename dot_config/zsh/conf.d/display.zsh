@@ -1,0 +1,3 @@
+setopt promptsubst
+setopt longlistjobs
+setopt interactivecomments
