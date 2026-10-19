@@ -15,6 +15,7 @@ try_source "$ZDOTDIR/conf.d/less.zsh"
 try_source "$ZDOTDIR/conf.d/completion.zsh"
 try_source "$ZDOTDIR/conf.d/glob.zsh"
 try_source "$ZDOTDIR/conf.d/display.zsh"
+try_source "$ZDOTDIR/conf.d/brew.zsh"
 
 # Path Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
