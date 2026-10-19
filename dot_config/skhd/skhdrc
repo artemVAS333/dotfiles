@@ -90,4 +90,4 @@ ctrl + shift - l : yabai -m window --warp east  || yabai -m window --move rel:20
 # app launchers
 shift + cmd - e : ~/.config/yabai/scripts/launch_floating.sh yazi
 shift + cmd - b : ~/.config/yabai/scripts/launch_floating.sh btop
-
+ctrl - space : ~/.config/yabai/scripts/launch_floating.sh ~/.config/yabai/scripts/launcher.sh launcher-term

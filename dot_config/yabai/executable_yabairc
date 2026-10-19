@@ -45,6 +45,7 @@ yabai -m config                                 \
     mouse_drop_action            swap
 
 yabai -m rule --add title="^floating-term$" manage=off grid=10:10:1:1:8:8
+yabai -m rule --add title="^launcher-term$" manage=off grid=6:6:2:2:2:2
 yabai -m rule --add app="^System Settings$" manage=off
 
 echo "yabai configuration loaded.."
