@@ -30,7 +30,7 @@ try_source "$ZSH/oh-my-zsh.sh"
 try_source "$ZDOTDIR/conf.d/aliases.zsh"
 
 try_source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
-try_source "$ZDOTDIR/conf.d/p10k.zsh"
+try_source "$ZDOTDIR/themes/.p10k-lean-catppuccin-mocha.zsh"
 
 try_eval fnm env --use-on-cd --shell zsh
 try_eval zoxide init zsh

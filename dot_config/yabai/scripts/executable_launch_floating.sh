@@ -14,7 +14,10 @@ if [ -n "$KITTY_SOCKET" ]; then
         --title="$title" \
         $app
 else
-    /Applications/Kitty.app/Contents/MacOS/kitty --title="$title" -e $app &
+    /Applications/Kitty.app/Contents/MacOS/kitty \
+        --title="$title" \
+        --directory ~ \
+        -e $app &
 fi
 
 sleep 0.1
