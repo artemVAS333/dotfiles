@@ -82,10 +82,10 @@ ctrl + shift - k : yabai -m window --insert north
 ctrl + shift - l : yabai -m window --insert east
 
 # Manage window 
-shift + cmd - f : yabai -m window --grid 1:1:0:0:1:1 || yabai -m window --toggle zoom-fullscreen
-shift + cmd - c : ~/.config/yabai/scripts/center_window.sh
-shift + cmd - m : ~/.config/yabai/scripts/toggle_minimize.sh
-shift + cmd - x : yabai -m window --close
+shift + alt - f : yabai -m window --grid 1:1:0:0:1:1 || yabai -m window --toggle zoom-fullscreen
+shift + alt - c : ~/.config/yabai/scripts/center_window.sh
+shift + alt - m : ~/.config/yabai/scripts/toggle_minimize.sh
+shift + alt - x : yabai -m window --close
 
 # Manage window layout
 shift + alt - 0 : yabai -m space --balance
