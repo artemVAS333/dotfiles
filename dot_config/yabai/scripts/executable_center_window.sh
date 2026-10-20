@@ -1,5 +1,14 @@
 #!/bin/bash
-eval $(yabai -m query --displays --display | jq -r '.frame | "DS_W=\(.w) DS_H=\(.h) DS_X=\(.x) DS_Y=\(.y)"')
+
+eval $(yabai -m query --spaces --space | jq -r '
+  .["padding-top"] as $pt |
+  .["padding-left"] as $pl |
+  .["padding-right"] as $pr |
+  .["padding-bottom"] as $pb |
+  to_entries[] | select(.key == "frame") | .value | 
+  "DS_W=\(.w - $pl - $pr) DS_H=\(.h - $pt - $pb) DS_X=\(.x + $pl) DS_Y=\(.y + $pt)"
+')
+
 eval $(yabai -m query --windows --window | jq -r '.frame | "WIN_W=\(.w) WIN_H=\(.h)"')
 
 x=$(awk -v ds_x="$DS_X" -v ds_w="$DS_W" -v win_w="$WIN_W" 'BEGIN {print int(ds_x + (ds_w - win_w) / 2)}')
