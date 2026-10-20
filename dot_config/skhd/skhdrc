@@ -51,6 +51,7 @@ alt + rcmd - 8 : yabai -m window --display 8 && yabai -m display --focus 8
 alt + rcmd - 9 : yabai -m window --display 9 && yabai -m display --focus 9
 
 # Focus windows
+cmd + shift - o : yabai -m window --focus recent || yabai -m display --focus recent
 cmd + shift - h : yabai -m window --focus west  || yabai -m display --focus west
 cmd + shift - j : yabai -m window --focus south || yabai -m display --focus south
 cmd + shift - k : yabai -m window --focus north || yabai -m display --focus north
