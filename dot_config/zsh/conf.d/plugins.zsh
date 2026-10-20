@@ -1,7 +1,6 @@
 plugins=(
   direnv
   vi-mode
-  web-search
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
