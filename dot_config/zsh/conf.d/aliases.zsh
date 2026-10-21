@@ -13,6 +13,7 @@ alias hl='history | less'
 alias hs='history | grep'
 alias hsi='history | grep -i'
 
+alias cat="bat"
 
 mux() {
   local target_path="."
