@@ -7,35 +7,13 @@ if [[ -f "${ZDOTDIR:-$HOME/.config/zsh}/lib/helpers.zsh" ]]; then
 fi
 
 # Load modular configurations
-try_source "$ZDOTDIR/conf.d/env.zsh"
-try_source "$ZDOTDIR/conf.d/lang.zsh"
-try_source "$ZDOTDIR/conf.d/dump.zsh"
-try_source "$ZDOTDIR/conf.d/history.zsh"
-try_source "$ZDOTDIR/conf.d/less.zsh"
-try_source "$ZDOTDIR/conf.d/completion.zsh"
-try_source "$ZDOTDIR/conf.d/glob.zsh"
-try_source "$ZDOTDIR/conf.d/display.zsh"
-try_source "$ZDOTDIR/conf.d/brew.zsh"
-try_source "$ZDOTDIR/conf.d/fzf.zsh"
-try_source "$ZDOTDIR/conf.d/cargo.zsh"
-try_source "$ZDOTDIR/conf.d/vi.zsh"
-
-# Path Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME=""
-
-# Plugins
-try_source "$ZDOTDIR/conf.d/plugins.zsh"
-
-# Oh My Zsh configuration
-try_source "$ZSH/oh-my-zsh.sh"
-
-# User configuration
-try_source "$ZDOTDIR/conf.d/aliases.zsh"
+for config_file in "$ZDOTDIR/conf.d"/*.zsh; do
+  source "$config_file"
+done
 
 try_source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
-try_source "$ZDOTDIR/themes/.p10k-lean-catppuccin-mocha.zsh"
+try_source "$ZDOTDIR/p10k/.p10k-lean-catppuccin-mocha.zsh"
 
 try_eval fnm env --use-on-cd --shell zsh
-try_eval zoxide init zsh
+try_eval zoxide init --cmd cd zsh
 

@@ -1,5 +1,6 @@
+# https://github.com/ohmyzsh/ohmyzsh/tree/0eeaa529bb1442c2934930a5820f596e678458d4/plugins/vi-mode
 # in plugins must be turned on vi-mode plugin
-#
+
 VI_MODE_SET_CURSOR=true
 
 # VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true

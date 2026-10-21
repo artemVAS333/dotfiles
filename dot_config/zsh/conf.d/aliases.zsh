@@ -1,10 +1,18 @@
 alias o='open'
+
 alias c='clear'
 alias q='exit'
 alias cq='clear && exit'
+
 alias ls="eza --icons=always --group-directories-first"
 alias ll="eza -l --icons=always --group-directories-first"
 alias la="eza -la --icons=always --group-directories-first"
+
+alias h='history'
+alias hl='history | less'
+alias hs='history | grep'
+alias hsi='history | grep -i'
+
 
 mux() {
   local target_path="."

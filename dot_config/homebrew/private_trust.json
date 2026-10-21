@@ -1,0 +1,6 @@
+{
+  "trustedformulae": [
+    "filosottile/musl-cross/musl-cross",
+    "messense/macos-cross-toolchains/x86_64-unknown-linux-gnu"
+  ]
+}
