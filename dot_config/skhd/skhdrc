@@ -71,7 +71,7 @@ fn + cmd - l : yabai -m window --insert east
 ctrl + cmd - z : yabai -m window --grid 1:1:0:0:1:1 || yabai -m window --toggle zoom-fullscreen
 ctrl + cmd - f : yabai -m window --grid 1:1:0:0:1:1 || yabai -m window --toggle zoom-fullscreen
 ctrl + cmd - c : ~/.config/yabai/scripts/center_window.sh
-ctrl + cmd - m : ~/.config/yabai/scripts/toggle_minimize.sh
+# ctrl + cmd - m : ~/.config/yabai/scripts/toggle_minimize.sh
 ctrl + cmd - x : yabai -m window --close
 
 # Manage window layout

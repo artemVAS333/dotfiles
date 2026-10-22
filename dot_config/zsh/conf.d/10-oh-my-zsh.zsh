@@ -6,7 +6,8 @@ plugins=(
   git gitfast gitignore git-extras git-auto-fetch git-commit
   docker docker-compose
   nest
-  alias-finder copybuffer direnv gnu-utils vi-mode
+  alias-finder copybuffer direnv gnu-utils 
+  # vi-mode
   zsh-autosuggestions zsh-syntax-highlighting 
 )
 

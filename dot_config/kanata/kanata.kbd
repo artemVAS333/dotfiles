@@ -8,14 +8,48 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  fn lctl lmet lalt           spc            ralt rmet 
+  fn lctl lmet lalt            spc            ralt rmet 
+)
+
+(defalias
+  cap (tap-hold 200 200 esc lctl)
+  spc-nav (tap-hold-press 200 200 spc (layer-toggle nav))
+
+  m-c M-c    ;; Copy
+  m-v M-v    ;; Paste
+  m-z M-z    ;; Undo
+  m-f M-f    ;; Find
+  m-x M-x    ;; Cut
 )
 
 (deflayer base
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12 
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  lctl a    s    d    f    g    h    j    k    l    ;    '    ret
+  @cap a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  XX fn lmet lalt           spc            ralt rmet
+  XX   fn   lmet lalt            @spc-nav       ralt rmet
+)
+
+(deflayermap (nav)
+  h left
+  j down
+  k up
+  l right
+
+  w A-right 
+  b A-left 
+  n home   
+  . end    
+
+  m pgdn   
+  , pgup   
+
+  u @m-z   
+  y @m-c   
+  p @m-v   
+  x @m-x   
+  f @m-f   
+
+  bspc A-bspc
 )
