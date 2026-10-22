@@ -85,6 +85,10 @@ return {
         -- ["<C-S>"] = false,
       },
       x = {},
+      i = {
+        ["jj"] = { "<ESC>", desc = "Exit insert mode" },
+        ["jk"] = { "<ESC>", desc = "Exit insert mode" },
+      },
     },
   },
 }

@@ -7,8 +7,6 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.pack.full-dadbod" },
-  -- { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.yaml" },
