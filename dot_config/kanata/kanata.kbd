@@ -49,19 +49,19 @@
     ;;------------------------------------------------------------------
     th1-key lalt 
     th1-tap esc
-    th1-hold num-layer
+    th1-hold wm-layer
 
     th2-key lmet 
     th2-tap spc 
-    th2-hold wm-layer
+    th2-hold edit-layer
 
     th3-key spc 
     th3-tap ent 
-    th3-hold nav-layer
+    th3-hold num-layer
 
     th4-key rmet
-    th4-tap esc 
-    th4-hold media-layer
+    th4-tap tab 
+    th4-hold fn-layer
 )
 
 (defalias
@@ -86,8 +86,6 @@
     thumb-2 (tap-hold $tap-time $hold-time $th2-tap (layer-toggle $th2-hold))
     thumb-3 (tap-hold $tap-time $hold-time $th3-tap (layer-toggle $th3-hold))
     thumb-4 (tap-hold $tap-time $hold-time $th4-tap (layer-toggle $th4-hold))
-    
-    lang fn  ;; Language
 )
 
 (deffakekeys
@@ -128,8 +126,8 @@
     $th4-key @thumb-4
 )
 
-(deflayermap (nav-layer)
-    $key1 $mod1
+(deflayermap (edit-layer)
+    ;;$key1 $mod1
     $key2 $mod2
     $key3 $mod3
     $key4 $mod4
@@ -137,16 +135,19 @@
     i bspc
     o del
 
-    w A-right
-    b A-left
+    e A-right
+    w A-left
 
-    t @lang
-
+    a M-a       ;; Select All
     y M-c       ;; Copy 
+    c M-c       ;; Copy
     u M-z       ;; Undo
+    z M-z       ;; Undo
     r M-S-z     ;; Redo
+    b M-S-z     ;; Redo
     x M-x       ;; Cut 
     p M-v       ;; Paste 
+    v M-v       ;; Paste
 
     h lft       ;; Left
     j down      ;; Down
@@ -159,33 +160,33 @@
     , pgup      ;; Page Up
     . end       ;; End
 
-    $th1-key S-tab   ;; Shift + Tab
-    $th2-key tab     ;; Tab
+    t M-t
+
+    $th3-key C-S-tab     ;; Tab
+    $th4-key C-tab   ;; Shift + Tab
 )
 
 (deflayermap (wm-layer)
     $key1 $mod1
     $key2 $mod2
-    ;;$key3 $mod3
-    ;;$key4 $mod4
+
+    n C-S-A-M-n
+    d C-S-A-M-d
 
     h M-S-h
     j M-S-j
     k M-S-k
     l M-S-l
 
-    n C-S-A-M-n
-    d C-S-A-M-w
-
-    u M-S-1
-    i M-S-2
-    o M-S-3
+    m M-S-1
+    , M-S-2
+    . M-S-3
     p M-S-4
-    m M-S-5
-    , M-S-6
-    . M-S-7
-    ; M-S-8
-    / M-S-9
+    ; M-S-5
+    / M-S-6
+
+    i M-S-i
+    o M-S-o
 
     t C-M-t
     e C-M-e
@@ -200,7 +201,7 @@
     y C-S-A-M-y
 )
 
-(deflayermap (media-layer)
+(deflayermap (fn-layer)
     h prev
     j voldwn
     k volu
@@ -211,30 +212,22 @@
     i brdn    
     o brup    
 
-    $th1-key (layer-toggle fn-layer)
-)
-
-(deflayermap (fn-layer)
-    $key1 $mod1
-    $key2 $mod2
-    $key3 $mod3
-    $key4 $mod4
-
-    y f7    u f8    i f9   o f12
-    h f4    j f5    k f6   l f11  
-    n f1    m f2    , f3   . f10 
+    q f12    w f5    e f6    r f7     t f10
+    a f11    s f4    d f3    f f1     g f2
+                     c f9    v f8    
 )
 
 (deflayermap (num-layer)
-    $key1 $mod1
-    $key2 $mod2
-    $key3 $mod3
-    $key4 $mod4
+    $rkey1 $rmod1
+    $rkey2 $rmod2
+    $rkey3 $rmod3
+    $rkey4 $rmod4
 
-    y 7    u 8    i 9   o [
-    h 4    j 5    k 6   l -   ; = 
-    n 1    m 2    , 3   . '   / \    
-    
-    $th3-key 0   $th4-key ]
+    q [     w 5     e 6     r 7     t ]     
+    a '     s 4     d 3     f 1     g 2
+    z \     x -     c 9     v 8     b =
+
+    $th1-key `   
+    $th2-key 0   
 )
 
