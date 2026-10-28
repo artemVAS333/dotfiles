@@ -18,8 +18,26 @@ cmd + shift - 9 : yabai -m space --focus 9
 cmd + shift - 0 : yabai -m space --focus 10 
 
 # Move focused window to space 
-cmd + shift + ctrl + alt - i : yabai -m window --space prev || yabai -m window --space last && yabai -m space --focus last
-cmd + shift + ctrl + alt - o : yabai -m window --space next || yabai -m window --space first && yabai -m space --focus first
+cmd + shift + ctrl + alt - i : \
+  target=$(yabai -m query --spaces --space | jq '.index') && \
+  if [ "$target" -eq 1 ]; then \
+    dest=$(yabai -m query --spaces | jq 'max_by(.index).index'); \
+  else \
+    dest=$((target - 1)); \
+  fi && \
+  yabai -m window --space $dest && \
+  yabai -m space --focus $dest
+
+cmd + shift + ctrl + alt - o : \
+  target=$(yabai -m query --spaces --space | jq '.index') && \
+  max=$(yabai -m query --spaces | jq 'max_by(.index).index') && \
+  if [ "$target" -eq "$max" ]; then \
+    dest=1; \
+  else \
+    dest=$((target + 1)); \
+  fi && \
+  yabai -m window --space $dest && \
+  yabai -m space --focus $dest
 
 cmd + shift + ctrl + alt - 1 : yabai -m window --space 1  && yabai -m space --focus 1
 cmd + shift + ctrl + alt - 2 : yabai -m window --space 2  && yabai -m space --focus 2

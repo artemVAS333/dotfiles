@@ -135,8 +135,10 @@
     i bspc
     o del
 
+    w M-w
+
     e A-right
-    w A-left
+    b A-left
 
     a M-a       ;; Select All
     y M-c       ;; Copy 
@@ -144,7 +146,6 @@
     u M-z       ;; Undo
     z M-z       ;; Undo
     r M-S-z     ;; Redo
-    b M-S-z     ;; Redo
     x M-x       ;; Cut 
     p M-v       ;; Paste 
     v M-v       ;; Paste
@@ -163,7 +164,7 @@
     t M-t
 
     $th3-key C-S-tab     ;; Tab
-    $th4-key C-tab   ;; Shift + Tab
+    $th4-key C-tab       ;; Shift + Tab
 )
 
 (deflayermap (wm-layer)

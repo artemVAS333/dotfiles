@@ -7,7 +7,8 @@ plugins=(
   docker docker-compose
   nest
   alias-finder copybuffer direnv gnu-utils 
-  # vi-mode
+  aws
+  vi-mode
   zsh-autosuggestions zsh-syntax-highlighting 
 )
 
