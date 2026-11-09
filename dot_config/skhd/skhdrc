@@ -90,7 +90,6 @@ ctrl + cmd - x : yabai -m window --close
 # cmd + shift + alt - 4 : yabai -m space --rotate 90
 
 # App launchers
-hyper - g : ~/.config/yabai/scripts/launch.sh ~/.config/yabai/scripts/launcher.sh launcher-term
 hyper - y : ~/.config/yabai/scripts/launch.sh yazi
 hyper - b : ~/.config/yabai/scripts/launch.sh btop
 
