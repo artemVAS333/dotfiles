@@ -76,10 +76,10 @@ cmd + ctrl - c : ~/.config/yabai/scripts/center_window.sh
 cmd + ctrl - x : yabai -m window --close
 
 # Modify window tree
-ctrl + alt - 1 : yabai -m space --balance
-ctrl + alt - 2 : yabai -m space --mirror x-axis
-ctrl + alt - 3 : yabai -m space --mirror y-axis
-ctrl + alt - 4 : yabai -m space --rotate 90
+ctrl + alt - 0 : yabai -m space --balance
+ctrl + alt - 1 : yabai -m space --mirror x-axis
+ctrl + alt - 2 : yabai -m space --mirror y-axis
+ctrl + alt - 3 : yabai -m space --rotate 90
 
 # App launchers
 hyper - y : ~/.config/yabai/scripts/launch.sh yazi
