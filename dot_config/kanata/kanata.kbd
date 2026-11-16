@@ -67,7 +67,7 @@
 (defalias
     tap (multi
         (layer-switch nomods)
-        (on-idle-fakekey to-base tap 20)
+        (on-idle-fakekey to-base tap 10)
     )
 
     ;; Home Row Mods
@@ -132,19 +132,16 @@
     $key3 $mod3
     $key4 $mod4
 
-    i bspc
-    o del
-
-    e A-right
-    b A-left
-
-    p C-S-tab   
-    n C-tab     
-
     h lft     
     j down     
     k up       
     l rght     
+
+    i bspc
+    o del
+
+    p C-S-tab   
+    n C-tab     
 )
 
 (deflayermap (fn-layer)
