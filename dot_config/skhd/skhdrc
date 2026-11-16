@@ -3,8 +3,8 @@ hyper - d : yabai -m space --destroy
 hyper - n : ~/.config/yabai/scripts/create_space.sh
 
 # Change focus space
-ctrl - left  : yabai -m space --focus prev || yabai -m space --focus last
-ctrl - right : yabai -m space --focus next || yabai -m space --focus first
+ctrl - left  : mkdir /tmp/yabai_space.lock 2>/dev/null && { yabai -m space --focus prev || yabai -m space --focus last;  sleep 0.1; rmdir /tmp/yabai_space.lock; }
+ctrl - right : mkdir /tmp/yabai_space.lock 2>/dev/null && { yabai -m space --focus next || yabai -m space --focus first; sleep 0.1; rmdir /tmp/yabai_space.lock; }
 
 ctrl - 1 : yabai -m space --focus 1  
 ctrl - 2 : yabai -m space --focus 2  
@@ -18,26 +18,19 @@ ctrl - 9 : yabai -m space --focus 9
 ctrl - 0 : yabai -m space --focus 10 
 
 # Move focused window to space 
-ctrl + shift - left : \
-  target=$(yabai -m query --spaces --space | jq '.index') && \
-  if [ "$target" -eq 1 ]; then \
-    dest=$(yabai -m query --spaces | jq 'max_by(.index).index'); \
-  else \
-    dest=$((target - 1)); \
-  fi && \
-  yabai -m window --space $dest && \
-  yabai -m space --focus $dest
+ctrl + shift - left : mkdir /tmp/yabai_space.lock 2>/dev/null && { \
+  trap 'rmdir /tmp/yabai_space.lock' EXIT; \
+  yabai -m window --space prev || yabai -m window --space last; \
+  yabai -m space --focus prev || yabai -m space --focus last; \
+  sleep 0.15; \
+}
 
-ctrl + shift - right : \
-  target=$(yabai -m query --spaces --space | jq '.index') && \
-  max=$(yabai -m query --spaces | jq 'max_by(.index).index') && \
-  if [ "$target" -eq "$max" ]; then \
-    dest=1; \
-  else \
-    dest=$((target + 1)); \
-  fi && \
-  yabai -m window --space $dest && \
-  yabai -m space --focus $dest
+ctrl + shift - right : mkdir /tmp/yabai_space.lock 2>/dev/null && { \
+  trap 'rmdir /tmp/yabai_space.lock' EXIT; \
+  yabai -m window --space next || yabai -m window --space first; \
+  yabai -m space --focus next || yabai -m space --focus first; \
+  sleep 0.15; \
+}
 
 ctrl + shift - 1 : yabai -m window --space 1  && yabai -m space --focus 1
 ctrl + shift - 2 : yabai -m window --space 2  && yabai -m space --focus 2
