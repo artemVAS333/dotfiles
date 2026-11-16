@@ -10,21 +10,15 @@ local function is_enabled(mod)
 end
 
 local items = {
-  { "logo", "logo.apple" },
-  { "menus", "menus.menus" },
   { "spaces", "spaces.spaces" },
   { "front_app", "front_app.front_app" },
   { "calendar", "calendar.calendar" },
   { "battery", "battery.battery" },
   { "wifi", "monitor.wifi" },
   { "volume", "volume.volume" },
-  { "chat", "chat.qq_wechat" },
-  { "brew", "brew.brew" },
-  { "toggle_stats", "toggle_stats.toggle_stats" },
   { "cpu", "monitor.cpu" },
   { "mem", "monitor.mem" },
   { "netspeed", "monitor.netspeed" },
-  { "music", "music.music" },
 }
 
 for _, item in ipairs(items) do

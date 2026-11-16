@@ -38,38 +38,21 @@ FONT = {
 }
 
 MODULES = {
-  -- logo = { enable = true },
-  -- menus = { enable = true },
   spaces = { enable = true },
   front_app = { enable = true },
   calendar = { enable = true },
   battery = { enable = true, style = "icon" },
-  -- wifi = { enable = true },
-  -- volume = { enable = true },
-  chat = { enable = true },
-  -- brew = { enable = true },
-  -- toggle_stats = { enable = true },
+  wifi = { enable = true },
+  volume = { enable = true },
   netspeed = { enable = true },
   cpu = { enable = true },
   mem = { enable = true },
-  -- music = { enable = true },
 }
 
 SPACES = {
   --- @type "greek_uppercase" | "greek_lowercase" | nil
   ID_STYLE = nil,
   ITEM_PADDING = 12,
-}
-
-MUSIC = {
-  CONTROLLER = "media-control",
-  ALBUM_ART_SIZE = 1280,
-  TITLE_MAX_CHARS = 15,
-  DEFAULT_ARTIST = "Various Artists",
-  DEFAULT_ALBUM = "No Album",
-  DEFAULT_ALBUM_ART_PATH = ITEMS_HOME .. "music/default_albumarts/various_artists_mocha.jpg",
-  POPUP_WIDTH = 80,
-  POPUP_ITEMS = { shuffle = false, repeating = false },
 }
 
 WIFI = { PROXY_APP = "FlClash" }
