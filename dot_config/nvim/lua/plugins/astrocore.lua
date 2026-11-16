@@ -72,10 +72,10 @@ return {
         -- Exit from nvim
         ["<S-q>"] = { "<cmd>qa<CR>", desc = "Quit Neovim" },
         -- Buffer navigation
-        ["<Tab>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["<S-Tab>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-        ["<M-,>"] = { function() require("astrocore.buffer").move(-1) end, desc = "Move buffer left" },
-        ["<M-.>"] = { function() require("astrocore.buffer").move(1) end, desc = "Move buffer right" },
+        ["<Right>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["<Left>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        ["<S-Left>"] = { function() require("astrocore.buffer").move(-1) end, desc = "Move buffer left" },
+        ["<S-Right>"] = { function() require("astrocore.buffer").move(1) end, desc = "Move buffer right" },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus

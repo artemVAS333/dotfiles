@@ -47,21 +47,21 @@
     rmod4 rctl
 
     ;;------------------------------------------------------------------
-    th1-key lalt 
+    th1-key lalt
     th1-tap esc
-    th1-hold wm-layer
+    th1-hold (layer-toggle num-layer)
 
-    th2-key lmet 
-    th2-tap spc 
-    th2-hold edit-layer
+    th2-key lmet
+    th2-tap spc
+    th2-hold lmet
 
-    th3-key spc 
-    th3-tap ent 
-    th3-hold num-layer
+    th3-key spc
+    th3-tap ent
+    th3-hold (layer-toggle edit-layer)
 
     th4-key rmet
-    th4-tap tab 
-    th4-hold fn-layer
+    th4-tap tab
+    th4-hold (layer-toggle fn-layer)
 )
 
 (defalias
@@ -82,10 +82,10 @@
     rdelta (tap-hold-release-keys $tap-time $hold-time (multi $rkey4 @tap) $rmod4 $right-hand-keys)
 
     ;; Thumb Keys
-    thumb-1 (tap-hold $tap-time $hold-time $th1-tap (layer-toggle $th1-hold))
-    thumb-2 (tap-hold $tap-time $hold-time $th2-tap (layer-toggle $th2-hold))
-    thumb-3 (tap-hold $tap-time $hold-time $th3-tap (layer-toggle $th3-hold))
-    thumb-4 (tap-hold $tap-time $hold-time $th4-tap (layer-toggle $th4-hold))
+    thumb-1 (tap-hold $tap-time $hold-time $th1-tap $th1-hold)
+    thumb-2 (tap-hold $tap-time $hold-time $th2-tap $th2-hold)
+    thumb-3 (tap-hold $tap-time $hold-time $th3-tap $th3-hold)
+    thumb-4 (tap-hold $tap-time $hold-time $th4-tap $th4-hold)
 )
 
 (deffakekeys
@@ -127,7 +127,7 @@
 )
 
 (deflayermap (edit-layer)
-    ;;$key1 $mod1
+    $key1 $mod1
     $key2 $mod2
     $key3 $mod3
     $key4 $mod4
@@ -135,70 +135,16 @@
     i bspc
     o del
 
-    w M-w
-
     e A-right
     b A-left
 
-    a M-a       ;; Select All
-    y M-c       ;; Copy 
-    c M-c       ;; Copy
-    u M-z       ;; Undo
-    z M-z       ;; Undo
-    r M-S-z     ;; Redo
-    x M-x       ;; Cut 
-    p M-v       ;; Paste 
-    v M-v       ;; Paste
+    p C-S-tab   
+    n C-tab     
 
-    h lft       ;; Left
-    j down      ;; Down
-    k up        ;; Up
-    l rght      ;; Right
-
-    / ins       ;; Insert
-    n home      ;; Home
-    m pgdn      ;; Page Down
-    , pgup      ;; Page Up
-    . end       ;; End
-
-    t M-t
-
-    $th3-key C-S-tab     ;; Tab
-    $th4-key C-tab       ;; Shift + Tab
-)
-
-(deflayermap (wm-layer)
-    $key1 $mod1
-    $key2 $mod2
-
-    n C-S-A-M-n
-    d C-S-A-M-d
-
-    h M-S-h
-    j M-S-j
-    k M-S-k
-    l M-S-l
-
-    m M-S-1
-    , M-S-2
-    . M-S-3
-    p M-S-4
-    ; M-S-5
-    / M-S-6
-
-    i M-S-i
-    o M-S-o
-
-    t C-M-t
-    e C-M-e
-
-    q M-q
-    f C-M-f
-    c C-M-c
-    x C-M-x
-
-    b C-S-A-M-b
-    y C-S-A-M-y
+    h lft     
+    j down     
+    k up       
+    l rght     
 )
 
 (deflayermap (fn-layer)
@@ -212,22 +158,22 @@
     i brdn    
     o brup    
 
-    q f12    w f5    e f6    r f7     t f10
-    a f11    s f4    d f3    f f1     g f2
-                     c f9    v f8    
+    q f12    w f9    e f8    r f7
+    a f11    s f6    d f5    f f4
+    z f10    x f3    c f2    v f1
 )
 
 (deflayermap (num-layer)
-    $rkey1 $rmod1
-    $rkey2 $rmod2
-    $rkey3 $rmod3
-    $rkey4 $rmod4
+    $key1 $mod1
+    $key2 $mod2
+    $key3 $mod3
+    $key4 $mod4
 
-    q [     w 5     e 6     r 7     t ]     
-    a '     s 4     d 3     f 1     g 2
-    z \     x -     c 9     v 8     b =
+    y [     u 7     i 8     o 9     p ]     
+    h =     j 4     k 5     l 6     ; '
+    n -     m 1     , 2     . 3     / \
 
-    $th1-key `   
-    $th2-key 0   
+    $th3-key 0   
+    $th4-key `   
 )
 

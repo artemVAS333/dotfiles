@@ -3,5 +3,10 @@
     "anomalyco/tap/opencode-v2",
     "filosottile/musl-cross/musl-cross",
     "messense/macos-cross-toolchains/x86_64-unknown-linux-gnu"
+  ],
+  "trustedcasks": [
+    "grishka/grishka/neardrop",
+    "y3owk1n/tap/neru",
+    "y3owk1n/tap/neru-nightly"
   ]
 }
