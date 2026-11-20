@@ -14,6 +14,7 @@ alias hs='history | grep'
 alias hsi='history | grep -i'
 
 alias cat="bat"
+alias y="yazi"
 
 mux() {
   local target_path="."

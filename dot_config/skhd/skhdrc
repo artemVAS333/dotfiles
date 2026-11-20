@@ -71,7 +71,6 @@ cmd + alt - 0x25 : yabai -m window --resize right:40:0   || yabai -m window --re
 cmd + alt - 0x01 : yabai -m window --toggle split                                        # s
 cmd + alt - 0x11 : yabai -m window --toggle float                                        # t
 cmd + alt - 0x03 : yabai -m window --grid 1:1:0:0:1:1 || yabai -m window --toggle zoom-fullscreen # f
-cmd + alt - 0x08 : ~/.config/yabai/scripts/center_window.sh                              # c
 cmd + alt - 0x07 : yabai -m window --close                                               # x
 
 # Modify window tree
@@ -79,10 +78,6 @@ ctrl + alt - 0 : yabai -m space --balance
 ctrl + alt - 1 : yabai -m space --mirror x-axis
 ctrl + alt - 2 : yabai -m space --mirror y-axis
 ctrl + alt - 3 : yabai -m space --rotate 90
-
-# App launchers
-hyper - 0x10 : ~/.config/yabai/scripts/launch.sh yazi   # y
-hyper - 0x0B : ~/.config/yabai/scripts/launch.sh btop   # b
 
 cmd - 0x2E : :   # m
 cmd - 0x04 : :   # h
