@@ -5,8 +5,8 @@
 (defsrc)
 
 (defvar
-    tap-time        170
-    hold-time       170
+    tap-time        180
+    hold-time       180
     double-tap-time 300
     
     left-hand-keys (
@@ -48,7 +48,7 @@
 
     ;;------------------------------------------------------------------
     th1-key lalt
-    th1-tap esc
+    th1-tap tab 
     th1-hold (layer-toggle num-layer)
 
     th2-key lmet
@@ -57,10 +57,10 @@
 
     th3-key spc
     th3-tap ent
-    th3-hold (layer-toggle edit-layer)
+    th3-hold (layer-toggle nav-layer)
 
     th4-key rmet
-    th4-tap tab
+    th4-tap bspc 
     th4-hold (layer-toggle fn-layer)
 )
 
@@ -126,22 +126,18 @@
     $th4-key @thumb-4
 )
 
-(deflayermap (edit-layer)
+(deflayermap (nav-layer)
     $key1 $mod1
     $key2 $mod2
     $key3 $mod3
     $key4 $mod4
 
+    q esc 
+
     h lft     
     j down     
     k up       
     l rght     
-
-    i bspc
-    o del
-
-    p C-S-tab   
-    n C-tab     
 )
 
 (deflayermap (fn-layer)
@@ -149,6 +145,7 @@
     j voldwn
     k volu
     l next
+
     p pp
     m mute
 
