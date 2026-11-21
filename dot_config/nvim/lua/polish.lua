@@ -1,5 +1,11 @@
-if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+require "core.polish"
 
--- This will run last in the setup process.
--- This is just pure lua so anything that doesn't
--- fit in the normal config locations above can go here
+local profile = require("profile").current
+
+if profile then
+  local module = "profiles." .. profile .. ".polish"
+
+  if vim.fn.filereadable(vim.fn.stdpath "config" .. "/lua/" .. module:gsub("%.", "/") .. ".lua") == 1 then
+    require(module)
+  end
+end

@@ -1,39 +1,36 @@
 local M = {}
 
-local profiles = {
-  web = true,
-  systems = true,
-  python = true,
-  minimal = true,
-}
+local function available(name)
+  if not name:match "^[%w_-]+$" then return false end
+
+  local paths = vim.api.nvim_get_runtime_file("lua/profiles/" .. name .. "/init.lua", false)
+
+  return #paths > 0
+end
 
 local function resolve()
-  local root = vim.fn.getcwd()
+  local paths = vim.fs.find(".nvim/settings.json", {
+    upward = true,
+    path = vim.fn.getcwd(),
+    type = "file",
+    limit = 1,
+  })
 
-  while true do
-    local path = root .. "/.nvim/settings.json"
+  local path = paths[1]
+  if not path then return nil end
 
-    if vim.fn.filereadable(path) == 1 then
-      local ok, config = pcall(function() return vim.json.decode(table.concat(vim.fn.readfile(path), "\n")) end)
+  local ok, config = pcall(function() return vim.json.decode(table.concat(vim.fn.readfile(path), "\n")) end)
 
-      if not ok or type(config) ~= "table" then error("Invalid Neovim profile config: " .. path) end
+  if not ok or type(config) ~= "table" then error("Invalid Neovim profile config: " .. path) end
 
-      if not profiles[config.profile] then error("Unknown Neovim profile: " .. tostring(config.profile)) end
+  local profile = config.profile
 
-      return config.profile
-    end
+  if type(profile) ~= "string" or not available(profile) then error("Unknown Neovim profile: " .. tostring(profile)) end
 
-    local parent = vim.fs.dirname(root)
-
-    if not parent or parent == root then break end
-
-    root = parent
-  end
-
-  return "minimal"
+  return profile
 end
 
 M.current = resolve()
-vim.g.nvim_profile = M.current
+vim.g.nvim_profile = M.current or "core"
 
 return M
