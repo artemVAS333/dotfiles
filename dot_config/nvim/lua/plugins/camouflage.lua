@@ -1,7 +1,7 @@
 return {
   {
     "zeybek/camouflage.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    -- event = { "BufReadPre", "BufNewFile" },
     opts = {
       style = "stars", -- 'stars' | 'dotted' | 'text' | 'scramble'
       reveal = {
